@@ -45,10 +45,11 @@ const Weather = () => {
       {weather && (
         <>
           <h1 className="text-center city text-white"> {city.toLocaleUpperCase()}</h1>
-          <Card className="text-center text-white mt-3 noBorder">
+
+          <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" back ">
               <Card.Title>
-                <div className=" d-flex justify-content-center">
+                <div className=" d-flex justify-content-center align-item-center">
                   <div className="size">{celsius(weather.main.temp)}°</div>
                   <Card.Img
                     variant="top"
@@ -59,21 +60,35 @@ const Weather = () => {
               </Card.Title>
 
               <Card.Text>
-                <div>Min: {celsius(weather.main.temp_min)}°</div>
-                <div>Max: {celsius(weather.main.temp_max)}°</div>
-                <div>Condizioni: {weather.weather[0].description}</div>
-                <div>Umidità: {weather.main.humidity}%</div>
+                <Container className="w-50 font_text">
+                  <div>
+                    <i className="bi bi-thermometer icon"></i> {celsius(weather.main.temp_min)}°
+                  </div>
+                  <div>
+                    <i className="bi bi-thermometer-high icon"></i> {celsius(weather.main.temp_max)}°
+                  </div>
+                  <div>
+                    <i className="bi bi-cloud icon"></i> {weather.weather[0].description}
+                  </div>
+                  <div>
+                    <i className="bi icon bi-moisture"> </i>
+                    {weather.main.humidity}%
+                  </div>
+                </Container>
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="text-center bg-primary text-white mt-3 noBorder">
-            <Card.Body className=" back">
+          <Card className=" text-white mt-3 noBorder">
+            <Card.Body className=" back ">
               <Card.Text>
-                <div>{celsius(weather.main.temp)}°</div>
-                <div>Min: {celsius(weather.main.temp_min)}°</div>
-                <div>Max: {celsius(weather.main.temp_max)}°</div>
-                <div>Condizioni: {weather.weather[0].description}</div>
-                <div>Umidità: {weather.main.humidity}%</div>
+                <Container className="w-50 font_text">
+                  <div>
+                    <i className="bi icon bi-wind"></i> {celsius(weather.wind.speed)} km/h
+                  </div>
+                  <div>
+                    <i className="bi icon bi-water"></i> {celsius(weather.main.sea_level)} mt
+                  </div>
+                </Container>
               </Card.Text>
             </Card.Body>
           </Card>

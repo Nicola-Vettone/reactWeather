@@ -21,3 +21,10 @@ body {
 .noBorder {
   border: none !important;
 }
+.icon {
+  font-size: 28px;
+  color: black;
+}
+.font_text {
+  font-size: 25px;
+}
