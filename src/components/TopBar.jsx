@@ -11,9 +11,15 @@ function TopBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/">Home</Link>
-            <Link to="/weather">Previsioni</Link>
-            <Link to="/weather/5-days">Per 5 giorni</Link>
+            <Link to="/" className={"nav-link font-weight-bold" + (location.pathname === "/" ? " active" : "")}>
+              Home
+            </Link>
+            {/*      <Link
+              to="/weather"
+              className={"nav-link font-weight-bold" + (location.pathname === "/weather" ? " active" : "")}
+            >
+              Previsioni Meteo
+            </Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
