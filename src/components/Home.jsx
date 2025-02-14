@@ -14,7 +14,7 @@ const Home = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="mb-4">
+    <Form onSubmit={handleSubmit} className="mb-4 mt-3">
       <Form.Group className="mb-3" controlId="cityInput">
         <Form.Control
           type="text"

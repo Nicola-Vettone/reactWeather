@@ -10,7 +10,6 @@ const App = () => {
     <BrowserRouter>
       <Topbar />
       <Container fluid>
-        <h1 className="text-center mb-4">Le migliori previsioni del Meteo per:</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/weather/:city" element={<Weather />} />

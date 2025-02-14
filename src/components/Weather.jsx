@@ -43,26 +43,32 @@ const Weather = () => {
       {loading && <Alert>Caricamento...</Alert>}
 
       {weather && (
-        <Card>
+        <Card className="text-center bg-primary text-white mt-3">
           <Card.Body>
-            <Card.Img variant="top" src="" />
-            <Card.Title>{city.toLocaleUpperCase()}</Card.Title>
+            <Card.Title>
+              <Card.Img
+                variant="top"
+                className="w-25"
+                src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+              />
+              {city.toLocaleUpperCase()}
+            </Card.Title>
             <Card.Text>
-              <p>
+              <div>
                 <strong>Temperatura:</strong> {celsius(weather.main.temp)}°C
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>Temperatura min:</strong> {celsius(weather.main.temp_min)}°C
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>Temperatura max:</strong> {celsius(weather.main.temp_max)}°C
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>Condizioni:</strong> {weather.weather[0].description}
-              </p>
-              <p>
+              </div>
+              <div>
                 <strong>Umidità:</strong> {weather.main.humidity}%
-              </p>
+              </div>
             </Card.Text>
           </Card.Body>
         </Card>
