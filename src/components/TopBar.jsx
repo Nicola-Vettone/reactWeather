@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router";
 
 function TopBar() {
   return (
@@ -10,9 +11,9 @@ function TopBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Previsioni</Nav.Link>
-            <Nav.Link href="#link1">Per 5 giorni</Nav.Link>
+            <Link to="/">Home</Link>
+            <Link to="/weather">Previsioni</Link>
+            <Link to="/weather/5-days">Per 5 giorni</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

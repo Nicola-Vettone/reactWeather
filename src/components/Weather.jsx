@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, CardImg, Spinner } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
