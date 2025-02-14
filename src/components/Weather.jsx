@@ -8,7 +8,7 @@ const Weather = () => {
   const [loading, setLoading] = useState(true);
 
   function celsius(kelvin) {
-    return (kelvin - 273.15).toFixed(2); //funzione che converte i kelvin in celsius
+    return (kelvin - 273.15).toFixed(0); //funzione che converte i kelvin in celsius
   }
 
   useEffect(() => {
@@ -43,35 +43,41 @@ const Weather = () => {
       {loading && <Alert>Caricamento...</Alert>}
 
       {weather && (
-        <Card className="text-center bg-primary text-white mt-3">
-          <Card.Body>
-            <Card.Title>
-              <Card.Img
-                variant="top"
-                className="w-25"
-                src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-              />
-              {city.toLocaleUpperCase()}
-            </Card.Title>
-            <Card.Text>
-              <div>
-                <strong>Temperatura:</strong> {celsius(weather.main.temp)}°C
-              </div>
-              <div>
-                <strong>Temperatura min:</strong> {celsius(weather.main.temp_min)}°C
-              </div>
-              <div>
-                <strong>Temperatura max:</strong> {celsius(weather.main.temp_max)}°C
-              </div>
-              <div>
-                <strong>Condizioni:</strong> {weather.weather[0].description}
-              </div>
-              <div>
-                <strong>Umidità:</strong> {weather.main.humidity}%
-              </div>
-            </Card.Text>
-          </Card.Body>
-        </Card>
+        <>
+          <h1 className="text-center city text-white"> {city.toLocaleUpperCase()}</h1>
+          <Card className="text-center text-white mt-3 noBorder">
+            <Card.Body className=" back ">
+              <Card.Title>
+                <div className=" d-flex justify-content-center">
+                  <div className="size">{celsius(weather.main.temp)}°</div>
+                  <Card.Img
+                    variant="top"
+                    className="w-25"
+                    src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                  />
+                </div>
+              </Card.Title>
+
+              <Card.Text>
+                <div>Min: {celsius(weather.main.temp_min)}°</div>
+                <div>Max: {celsius(weather.main.temp_max)}°</div>
+                <div>Condizioni: {weather.weather[0].description}</div>
+                <div>Umidità: {weather.main.humidity}%</div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className="text-center bg-primary text-white mt-3 noBorder">
+            <Card.Body className=" back">
+              <Card.Text>
+                <div>{celsius(weather.main.temp)}°</div>
+                <div>Min: {celsius(weather.main.temp_min)}°</div>
+                <div>Max: {celsius(weather.main.temp_max)}°</div>
+                <div>Condizioni: {weather.weather[0].description}</div>
+                <div>Umidità: {weather.main.humidity}%</div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </>
       )}
     </Container>
   );

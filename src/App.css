@@ -4,6 +4,20 @@
 body {
   background-size: cover;
   background-position: center;
-  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201012/pngtree-white-cloud-on-blue-sky-weather-background-image_410050.jpg");
+  background-image: url("https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   min-height: 100vh;
+}
+.size {
+  font-size: 80px;
+}
+.city {
+  font-size: 80px;
+}
+.back {
+  background-color: #0990da;
+  border: none;
+  box-shadow: -1px 17px 19px 1px rgba(138, 138, 138, 1);
+}
+.noBorder {
+  border: none !important;
 }

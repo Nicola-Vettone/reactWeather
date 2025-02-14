@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 function TopBar() {
   return (
-    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#221f1f" }}>
+    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#1F2676" }}>
       <Container fluid>
         <Navbar.Brand href="#home">
           <i className="bi bi-brightness-high logo"></i>
