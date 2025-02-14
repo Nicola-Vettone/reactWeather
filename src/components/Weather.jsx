@@ -53,11 +53,25 @@ const Weather = () => {
         <Card.Text>
           {weather && (
             <div>
-              <h5>Temperatura: {celsius(weather.main.temp)}°C</h5>
-              <h5>Temperatura min: {weather.main.temp_min}</h5>
-              <h5>Temperatura max: {weather.main.temp_max}</h5>
-              <h5>Condizioni: {weather.weather[0].description}</h5>
-              <h5>Umidità: {weather.main.humidity}</h5>
+              <p>
+                <strong>Temperatura:</strong> {celsius(weather.main.temp)}
+                <b>°C</b>
+              </p>
+              <p>
+                <strong>Temperatura min:</strong> {celsius(weather.main.temp_min)}
+                <b>°C</b>
+              </p>
+              <p>
+                <strong>Temperatura max:</strong> {celsius(weather.main.temp_max)}
+                <b>°C</b>
+              </p>
+              <p>
+                <strong>Condizioni:</strong> {weather.weather[0].description}
+              </p>
+              <p>
+                <strong>Umidità:</strong> {weather.main.humidity}
+                <b>%</b>
+              </p>
             </div>
           )}
         </Card.Text>
