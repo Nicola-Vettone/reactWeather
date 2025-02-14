@@ -96,7 +96,7 @@ const Weather = () => {
             </Card.Body>
           </Card>
           <div className="d-flex justify-content-center">
-            <Link to={"/weather/five-days/:city"} className="mt-5 btn btn-primary">
+            <Link to={`/weather/five-days/${city}`} className="mt-5 btn btn-primary">
               Maggiori Dettagli
             </Link>
           </div>

@@ -58,7 +58,7 @@ const FiveDays = () => {
 
       {weather && forecast && (
         <div className="mt-4 mb-3">
-          <h3 className="text-center text-white mb-3">Previsioni per i prossimi 5 giorni:</h3>
+          <h3 className="text-center text-white mb-3"> {city.toLocaleUpperCase()} i prossimi 5 giorni:</h3>
           {forecast.map((day) => (
             <Card key={day.dt} className="text-white mt-3 noBorder">
               <Card.Body className="back">
