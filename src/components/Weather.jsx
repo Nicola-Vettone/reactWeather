@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Container, Spinner, Form, Button } from "react-bootstrap";
+import { Card, Container, Form, Button, Alert } from "react-bootstrap";
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -57,11 +57,7 @@ const Weather = () => {
         <Button type="submit">Cerca</Button>
       </Form>
 
-      {loading && (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      )}
+      {loading && <Alert>Inserisci il nome di una città </Alert>}
 
       {weather && (
         <Card>
