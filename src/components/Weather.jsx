@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { Card, Container, Alert } from "react-bootstrap";
 
 const Weather = () => {
@@ -95,6 +95,11 @@ const Weather = () => {
               </Card.Text>
             </Card.Body>
           </Card>
+          <div className="d-flex justify-content-center">
+            <Link to={"/weather/five-days/:city"} className="mt-5 btn btn-primary">
+              Maggiori Dettagli
+            </Link>
+          </div>
         </>
       )}
     </Container>
