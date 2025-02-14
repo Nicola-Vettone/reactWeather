@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Spinner } from "react-bootstrap";
+import { Card, CardImg, Spinner } from "react-bootstrap";
 
 const Weather = () => {
   const [weather, setWeather] = useState(null);
@@ -43,15 +43,22 @@ const Weather = () => {
   }
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card>
       <Card.Body>
+        <Card.Img
+          variant="top"
+          src="https://static01.nyt.com/images/2014/12/11/technology/personaltech/11machin-illo/11machin-illo-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale"
+        />
         <Card.Title>Meteo Napoli</Card.Title>
         <Card.Text>
           {weather && (
-            <>
-              <div>Temperatura: {celsius(weather.main.temp)}°C</div>
-              <div>Condizioni: {weather.weather[0].description}</div>
-            </>
+            <div>
+              <h5>Temperatura: {celsius(weather.main.temp)}°C</h5>
+              <h5>Temperatura min: {weather.main.temp_min}</h5>
+              <h5>Temperatura max: {weather.main.temp_max}</h5>
+              <h5>Condizioni: {weather.weather[0].description}</h5>
+              <h5>Umidità: {weather.main.humidity}</h5>
+            </div>
           )}
         </Card.Text>
       </Card.Body>
