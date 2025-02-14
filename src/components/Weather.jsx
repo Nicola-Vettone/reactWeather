@@ -5,6 +5,10 @@ const Weather = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  function celsius(kelvin) {
+    return kelvin - 273.15;
+  }
+
   useEffect(() => {
     const weatherFetch = async () => {
       try {
@@ -45,7 +49,7 @@ const Weather = () => {
         <Card.Text>
           {weather && (
             <>
-              <div>Temperatura: {weather.main.temp}°C</div>
+              <div>Temperatura: {celsius(weather.main.temp)}°C</div>
               <div>Condizioni: {weather.weather[0].description}</div>
             </>
           )}

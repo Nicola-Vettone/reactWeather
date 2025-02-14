@@ -12,7 +12,7 @@ function TopBar() {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Previsioni</Nav.Link>
-            <Nav.Link href="#link">Previsioni per 5 giorni</Nav.Link>
+            <Nav.Link href="#link1">Per 5 giorni</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
