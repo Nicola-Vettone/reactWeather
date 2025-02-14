@@ -10,6 +10,9 @@ const Weather = () => {
   function celsius(kelvin) {
     return (kelvin - 273.15).toFixed(0); //funzione che converte i kelvin in celsius
   }
+  function date(seconds) {
+    return new Date(seconds * 1000).toLocaleString(); //funzione che converte la data
+  }
 
   useEffect(() => {
     if (!city) return;
@@ -44,8 +47,8 @@ const Weather = () => {
 
       {weather && (
         <>
-          <h1 className="text-center city text-white"> {city.toLocaleUpperCase()}</h1>
-
+          <h1 className="text-center city text-white">{city.toLocaleUpperCase()}</h1>
+          <h2 className="text-center text-white">{date(weather.dt)}</h2>
           <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" back ">
               <Card.Title>
