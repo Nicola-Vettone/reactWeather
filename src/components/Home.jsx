@@ -35,6 +35,7 @@ const Home = () => {
         "Los Angeles",
         "Pechino",
       ];
+      console.log(cities.length);
       const fetchedCities = await Promise.all(
         cities.map(async (city) => {
           try {

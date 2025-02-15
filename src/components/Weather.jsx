@@ -6,6 +6,7 @@ const Weather = () => {
   const { city } = useParams(); //Prendo la città dal path
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   function celsius(kelvin) {
     return (kelvin - 273.15).toFixed(0); //funzione che converte i kelvin in celsius
@@ -23,6 +24,15 @@ const Weather = () => {
         const resp = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_key}`); //fetch per prendere lat e lon
         const data = await resp.json();
 
+        console.log(data.length);
+
+        if (data.length === 0) {
+          setError(`Nessuna città corrispondente!`);
+          setLoading(false);
+          return;
+        } else {
+          setError(null);
+        }
         const latitude = data[0].lat;
         const longitude = data[0].lon;
 
@@ -43,7 +53,18 @@ const Weather = () => {
 
   return (
     <Container>
-      {loading && <Alert>Caricamento...</Alert>}
+      {loading && <Alert variant="warning">Caricamento...</Alert>}
+
+      {error && (
+        <div>
+          <Alert variant="danger" className="mt-2">
+            {error}
+          </Alert>
+          <Link to="/" className=" btn btn-primary d-flex justify-content-center px-0">
+            Ritorna alla Home
+          </Link>
+        </div>
+      )}
 
       {weather && (
         <>
