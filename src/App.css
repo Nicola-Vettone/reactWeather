@@ -1,6 +1,7 @@
 .logo {
-  width: 70px;
+  width: 55px;
 }
+
 body {
   background-size: cover;
   background-position: center;
@@ -43,4 +44,7 @@ body {
 .topBar {
   background: rgb(0, 106, 210);
   background: linear-gradient(90deg, rgba(0, 106, 210, 1) 2%, rgba(7, 170, 255, 1) 99%);
+}
+.position {
+  position: sticky;
 }

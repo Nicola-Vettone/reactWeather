@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 function TopBar() {
   return (
-    <Navbar variant="dark" expand="lg" className="topBar">
+    <Navbar variant="dark" expand="lg" className="topBar sticky-top">
       <Container fluid>
         <Navbar.Brand href="#home">
           <Image src="./src/assets/logo2.png" className="logo" alt="logo" />
