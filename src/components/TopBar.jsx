@@ -1,12 +1,12 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Image, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router";
 
 function TopBar() {
   return (
-    <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#1F2676" }}>
+    <Navbar variant="dark" expand="lg" className="topBar">
       <Container fluid>
         <Navbar.Brand href="#home">
-          <i className="bi bi-brightness-high logo"></i>
+          <Image src="./src/assets/logo2.png" className="logo" alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -14,12 +14,6 @@ function TopBar() {
             <Link to="/" className={"nav-link font-weight-bold" + (location.pathname === "/" ? " active" : "")}>
               Home
             </Link>
-            {/*      <Link
-              to="/weather"
-              className={"nav-link font-weight-bold" + (location.pathname === "/weather" ? " active" : "")}
-            >
-              Previsioni Meteo
-            </Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

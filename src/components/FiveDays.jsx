@@ -39,7 +39,7 @@ const FiveDays = () => {
         );
         const forecastData = await forecastResult.json();
 
-        const dailyForecast = forecastData.list.filter((item, index) => index % 8 === 0);
+        const dailyForecast = forecastData.list.filter((item, index) => index % 8 === 0); //operatore modulo usato perchè dava previsioni ogni 3 e quindi 8 per ogni giorno,così facendo ne da 1 per ogni giorno
         setForecast(dailyForecast);
       } catch (error) {
         console.log("Errore", error);

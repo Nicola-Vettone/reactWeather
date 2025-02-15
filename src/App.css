@@ -1,5 +1,5 @@
 .logo {
-  font-size: 40px;
+  width: 70px;
 }
 body {
   background-size: cover;
@@ -14,9 +14,9 @@ body {
   font-size: 50px;
 }
 .back {
-  background-color: #0990da;
-  border: none;
-  box-shadow: -1px 17px 19px 1px rgba(138, 138, 138, 1);
+  background: #0990da;
+
+  box-shadow: -1px 17px 19px 1px rgb(117, 116, 116);
 }
 .noBorder {
   border: none !important;
@@ -29,8 +29,18 @@ body {
   font-size: 25px;
 }
 .colorBack {
-  background-color: #1f2676;
+  background: linear-gradient(90deg, rgba(0, 106, 210, 1) 2%, rgba(7, 170, 255, 1) 99%);
 }
 .badgeSize {
   font-size: 20px !important;
+}
+.iconImg {
+  width: 100px !important;
+}
+.button {
+  max-height: 39px !important;
+}
+.topBar {
+  background: rgb(0, 106, 210);
+  background: linear-gradient(90deg, rgba(0, 106, 210, 1) 2%, rgba(7, 170, 255, 1) 99%);
 }

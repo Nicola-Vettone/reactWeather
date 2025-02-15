@@ -56,7 +56,7 @@ const Weather = () => {
                   <div className="size">{celsius(weather.main.temp)}°</div>
                   <Card.Img
                     variant="top"
-                    className="w-25"
+                    className="iconImg"
                     src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                   />
                 </div>

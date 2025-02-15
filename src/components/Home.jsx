@@ -30,6 +30,10 @@ const Home = () => {
         "Milano",
         "Napoli",
         "Genova",
+        "Osaka",
+        "Shangai",
+        "Los Angeles",
+        "Pechino",
       ];
       const fetchedCities = await Promise.all(
         cities.map(async (city) => {
@@ -51,16 +55,18 @@ const Home = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit} className="mb-4 mt-3">
+      <Form onSubmit={handleSubmit} className="mb-4 mt-3 d-flex justify-content-center">
         <Form.Group className="mb-3">
           <Form.Control
             type="text"
-            placeholder="Inserisci città..."
+            placeholder="Cerca la tua città..."
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
         </Form.Group>
-        <Button type="submit">Cerca</Button>
+        <Button className="button" type="submit">
+          Cerca
+        </Button>
       </Form>
       <Container>
         <h3 className="text-center">Grandi metropoli nel mondo:</h3>
