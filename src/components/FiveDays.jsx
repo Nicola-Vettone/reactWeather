@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Card, Container, Alert, Badge } from "react-bootstrap";
+import { Card, Container, Alert, Badge, CardTitle } from "react-bootstrap";
 
 const FiveDays = () => {
   const { city } = useParams();
@@ -62,10 +62,24 @@ const FiveDays = () => {
           {forecast.map((day) => (
             <Card key={day.dt} className="text-white mt-3 noBorder">
               <Card.Body className="back">
-                <Badge className="badgeSize">{date(day.dt)}</Badge>
+                <Badge className="badgeSize bg-body-tertiary text-dark">{date(day.dt)}</Badge>
+
+                <div className="d-flex justify-content-center mt-4">
+                  <CardTitle>
+                    <div className="size">{celsius(day.main.temp)}°</div>
+                  </CardTitle>
+                  <Card.Img
+                    variant="top"
+                    className="iconImg"
+                    src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                  />
+                </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="d-flex align-items-center"></div>
-                  <Container className="font_text">
+
+                  <Container className="font_text d-flex gap-5 justify-content-center">
+                    {console.log(day)}
+
                     <div>
                       <i className="bi bi-thermometer icon"></i> {celsius(day.main.temp_min)}°
                     </div>

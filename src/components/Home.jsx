@@ -74,7 +74,7 @@ const Home = () => {
         <div className="d-flex flex-wrap justify-content-center">
           {popularCities.map((city, index) => (
             <Card key={"city" + index} className="m-2 text-center noBorder ">
-              <Card.Body className="back ">
+              <Card.Body className="back text-white">
                 <Card.Title>{city.name}</Card.Title>
                 {city.icon && (
                   <Card.Img
@@ -84,7 +84,7 @@ const Home = () => {
                   />
                 )}
                 <Card.Text>{city.temp}°C</Card.Text>
-                <Button variant="primary" onClick={() => navigate(`/weather/${city.name}`)}>
+                <Button className="btn btn-light" onClick={() => navigate(`/weather/${city.name}`)}>
                   Vedi Meteo
                 </Button>
               </Card.Body>

@@ -14,6 +14,9 @@ const Weather = () => {
   function date(seconds) {
     return new Date(seconds * 1000).toLocaleString(); //funzione che converte la data
   }
+  function speed(speed) {
+    return (speed * 3.6).toFixed(0); //funzione per convertire i metri al secondo in km/h
+  }
 
   useEffect(() => {
     if (!city) return;
@@ -84,7 +87,7 @@ const Weather = () => {
               </Card.Title>
 
               <Card.Text>
-                <Container className="w-50 font_text">
+                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
                   <div>
                     <i className="bi bi-thermometer icon"></i> {celsius(weather.main.temp_min)}°
                   </div>
@@ -105,12 +108,40 @@ const Weather = () => {
           <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" back ">
               <Card.Text>
-                <Container className="w-50 font_text">
+                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
                   <div>
-                    <i className="bi icon bi-wind"></i> {celsius(weather.wind.speed)} km/h
+                    <i className="bi icon bi-wind"></i> {speed(weather.wind.speed)} km/h
                   </div>
                   <div>
-                    <i className="bi icon bi-water"></i> {celsius(weather.main.sea_level)} mt
+                    <i className="bi icon bi-water"></i> {weather.main.sea_level} mt
+                  </div>
+                </Container>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className=" text-white mt-3 noBorder">
+            <Card.Body className=" back ">
+              <Card.Text>
+                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
+                  <div>
+                    <i className="bi bi-sunrise icon"></i> {date(weather.sys.sunset)}
+                  </div>
+                  <div>
+                    <i className="bi bi-sunset icon"></i> {date(weather.sys.sunrise)}
+                  </div>
+                </Container>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card className=" text-white mt-3 noBorder">
+            <Card.Body className=" back ">
+              <Card.Text>
+                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
+                  <div>
+                    <i className="bi icon bi-wind"></i> {speed(weather.wind.speed)} km/h
+                  </div>
+                  <div>
+                    <i className="bi icon bi-water"></i> {weather.main.sea_level} mt
                   </div>
                 </Container>
               </Card.Text>
