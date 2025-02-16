@@ -18,7 +18,7 @@ const Weather = () => {
     return new Date(seconds * 1000).toLocaleString().slice(11); //funzione che converte la data del tramonto
   }
   function visibility(visibility) {
-    return (visibility / 1000).toLocaleString(); //funzione che converte la visibilità
+    return (visibility / 1000).toLocaleString().slice(0, 1, 10); //funzione che converte la visibilità
   }
   function speed(speed) {
     return (speed * 3.6).toFixed(0); //funzione per convertire i metri al secondo in km/h
@@ -116,7 +116,7 @@ const Weather = () => {
           <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" back ">
               <Card.Text>
-                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
+                <Container className="font_text d-flex gap-5 justify-content-center">
                   <div>
                     <i className="icon bi bi-eye"></i> {visibility(weather.visibility)} km
                   </div>
@@ -130,7 +130,7 @@ const Weather = () => {
           <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" back ">
               <Card.Text>
-                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
+                <Container className="font_text d-flex gap-5 justify-content-center">
                   <div>
                     <i className="bi icon bi-wind"></i> {speed(weather.wind.speed)} km/h
                   </div>
@@ -144,7 +144,7 @@ const Weather = () => {
           <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" back ">
               <Card.Text>
-                <Container className="w-50 font_text d-flex gap-5 justify-content-center">
+                <Container className="font_text d-flex gap-5 justify-content-center">
                   <div>
                     <i className="bi bi-sunrise icon"></i> {sunset_sunrise(weather.sys.sunset)}
                   </div>

@@ -49,3 +49,6 @@ body {
 .position {
   position: sticky;
 }
+.citySize {
+  font-size: 38px !important;
+}

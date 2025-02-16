@@ -33,11 +33,13 @@ const FiveDays = () => {
         );
         const weatherData = await weatherResult.json();
         setWeather(weatherData);
+        console.log(weatherData);
 
         const forecastResult = await fetch(
           `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}`
         );
         const forecastData = await forecastResult.json();
+        console.log(forecastData);
 
         const dailyForecast = forecastData.list.filter((item, index) => index % 8 === 0); //operatore modulo usato perchè dava previsioni ogni 3 e quindi 8 per ogni giorno,così facendo ne da 1 per ogni giorno
         setForecast(dailyForecast);
@@ -58,7 +60,13 @@ const FiveDays = () => {
 
       {weather && forecast && (
         <div className="mt-4 mb-3">
-          <h3 className="text-center text-white mb-3"> {city.toLocaleUpperCase()} i prossimi 5 giorni:</h3>
+          <div className="text-center text-white mb-3">
+            <h2 className="citySize">
+              {" "}
+              {city.toLocaleUpperCase()} {}
+            </h2>
+            <h4> I PROSSIMI 5 GIORNI:</h4>
+          </div>
           {forecast.map((day) => (
             <Card key={day.dt} className="text-white mt-3 noBorder">
               <Card.Body className="back">
