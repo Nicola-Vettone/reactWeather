@@ -85,8 +85,8 @@ const Weather = () => {
           <Card className=" text-white mt-3 noBorder">
             <Card.Body className=" backInfo ">
               <div className="d-flex flex-row-reverse me-1">
-                <Link to={"/weather/info"}>
-                  <i className="bi bi-info-circle icon"></i>
+                <Link to={`/weather/info/${city}`}>
+                  <i className="bi bi-info-circle icon text-white"></i>
                 </Link>
               </div>
               <Card.Title>
