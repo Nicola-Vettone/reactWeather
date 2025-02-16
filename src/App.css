@@ -19,6 +19,13 @@ body {
   background-image: url("https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   box-shadow: -1px 17px 19px 1px rgb(207, 236, 249);
 }
+.backInfo {
+  background: #0990da;
+  background-image: url("https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  box-shadow: -1px 17px 19px 1px rgb(207, 236, 249);
+  padding-top: 0 !important;
+  padding-right: 0 !important;
+}
 .noBorder {
   border: none !important;
 }
@@ -51,4 +58,7 @@ body {
 }
 .citySize {
   font-size: 38px !important;
+}
+.back2 {
+  padding-top: 16px !important;
 }

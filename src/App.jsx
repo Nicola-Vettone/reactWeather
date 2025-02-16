@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Weather from "./components/Weather";
 import Footer from "./components/Footer";
 import FiveDays from "./components/FiveDays";
+import Info from "./components/Info";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/weather/:city" element={<Weather />} />
             <Route path="/weather/five-days/:city" element={<FiveDays />} />
+            <Route path="/weather/info" element={<Info />} />
             <Route
               path="*"
               element={

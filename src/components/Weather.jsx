@@ -81,8 +81,14 @@ const Weather = () => {
             {city.toLocaleUpperCase()} ({weather.sys.country})
           </h1>
           <h2 className="text-center text-white">{date(weather.dt)}</h2>
+
           <Card className=" text-white mt-3 noBorder">
-            <Card.Body className=" back ">
+            <Card.Body className=" backInfo ">
+              <div className="d-flex flex-row-reverse me-1">
+                <Link to={"/weather/info"}>
+                  <i className="bi bi-info-circle icon"></i>
+                </Link>
+              </div>
               <Card.Title>
                 <div className=" d-flex justify-content-center align-item-center">
                   <div className="size">{celsius(weather.main.temp)}°</div>
@@ -114,7 +120,7 @@ const Weather = () => {
             </Card.Body>
           </Card>
           <Card className=" text-white mt-3 noBorder">
-            <Card.Body className=" back ">
+            <Card.Body className=" back  back2">
               <Card.Text>
                 <Container className="font_text d-flex gap-5 justify-content-center">
                   <div>
@@ -128,7 +134,7 @@ const Weather = () => {
             </Card.Body>
           </Card>
           <Card className=" text-white mt-3 noBorder">
-            <Card.Body className=" back ">
+            <Card.Body className=" back  back2">
               <Card.Text>
                 <Container className="font_text d-flex gap-5 justify-content-center">
                   <div>
@@ -142,7 +148,7 @@ const Weather = () => {
             </Card.Body>
           </Card>
           <Card className=" text-white mt-3 noBorder">
-            <Card.Body className=" back ">
+            <Card.Body className=" back back2 ">
               <Card.Text>
                 <Container className="font_text d-flex gap-5 justify-content-center">
                   <div>

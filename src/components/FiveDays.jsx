@@ -62,7 +62,6 @@ const FiveDays = () => {
         <div className="mt-4 mb-3">
           <div className="text-center text-white mb-3">
             <h2 className="citySize">
-              {" "}
               {city.toLocaleUpperCase()} {}
             </h2>
             <h4> I PROSSIMI 5 GIORNI:</h4>
